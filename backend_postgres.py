@@ -364,7 +364,7 @@ async def health_check():
 async def deployment_test():
     return {
         "message": "Deployment is working!", 
-        "version": "1.0.1",
+        "version": "1.0.2",
         "timestamp": datetime.datetime.utcnow(),
         "status": "success"
     }
