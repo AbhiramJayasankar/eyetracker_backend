@@ -360,6 +360,15 @@ async def export_user_data(username: str = Depends(verify_token)):
 async def health_check():
     return {"status": "healthy", "timestamp": datetime.datetime.utcnow()}
 
+@app.get("/deployment-test")
+async def deployment_test():
+    return {
+        "message": "Deployment is working!", 
+        "version": "1.0.1",
+        "timestamp": datetime.datetime.utcnow(),
+        "status": "success"
+    }
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
